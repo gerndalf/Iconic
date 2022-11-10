@@ -70,6 +70,8 @@ fun ListScreen(context: Context) {
                 }
         )
 
+        //TODO: Conditionally display an 'undo all' button here
+
         AppList(context,
         modifier = Modifier
             .constrainAs(list) {
