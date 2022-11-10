@@ -1,4 +1,4 @@
-package com.lemnos.iconic.appList
+package com.lemnos.iconic.view.appList
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -34,7 +34,8 @@ fun AppList(context: Context, modifier: Modifier) {
                 item {
                     AppItem(
                         appName = formattedName,
-                        appIcon = packageManager.getApplicationIcon(it.applicationInfo)
+                        appIcon = packageManager.getApplicationIcon(it.applicationInfo),
+                        packageName = it.packageName
                     )
                 }
             }

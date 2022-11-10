@@ -1,4 +1,4 @@
-package com.lemnos.iconic.appList
+package com.lemnos.iconic.view.appList
 
 import android.graphics.drawable.Drawable
 import com.lemnos.iconic.R
@@ -21,7 +21,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.AsyncImage
 
 @Composable
-fun AppItem(appName: String, appIcon: Drawable) {
+fun AppItem(appName: String, appIcon: Drawable, packageName: String) {
     BoxWithConstraints(
         modifier = Modifier
             .fillMaxWidth()
@@ -59,6 +59,11 @@ fun AppItem(appName: String, appIcon: Drawable) {
                     }
             )
 
+            /*
+            TODO: Conditionally render an 'undo' button to revert icon back to default
+            Use 'packageName' to search the db and check for custom icon
+             */
+
             AsyncImage(
                 model = R.drawable.chevron_right_48px,
                 contentDescription = "Navigate to swap screen",
@@ -72,7 +77,12 @@ fun AppItem(appName: String, appIcon: Drawable) {
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null
-                    ) { /*TODO: Call function to display icon swap screen */ }
+                    ) {
+                    /*
+                    TODO: Call function to display icon swap screen
+                    Call function to set the 'packageName, icon, and formattedName' in state
+                    */
+                    }
             )
 
         }

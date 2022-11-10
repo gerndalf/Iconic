@@ -17,10 +17,12 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.lemnos.iconic.appList.AppList
+import com.lemnos.iconic.view.appList.AppList
 import com.lemnos.iconic.ui.theme.IconicTheme
 
 class MainActivity : ComponentActivity() {
+    //TODO: Implement Room database here
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -31,6 +33,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     ListScreen(this)
+                    //TODO: Conditionally render SwapScreen here
                 }
             }
         }
